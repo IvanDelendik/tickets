@@ -1,5 +1,7 @@
 import React from "react";
 import "./StandartPoster.scss";
+// import { connect } from "react-redux";
+// import { addBacket } from "../../../redux/actions/addAction";
 
 const StandartPoster = ({ heading, data }) => {
   return (
