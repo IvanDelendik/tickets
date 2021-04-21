@@ -5,11 +5,7 @@ import Catalog from "./components/pages/Catalog/Catalog";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 
-// import { connect } from "react-redux";
-// import { addBacket } from "./redux/actions/addAction";
-
-const App = (props) => {
-  console.log(props);
+const App = () => {
   return (
     <Router>
       <Switch>

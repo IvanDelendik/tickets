@@ -24,7 +24,7 @@ const Header = () => {
           </li>
           <li>
             <Link to="/" className="header-nav-link">
-              Корзина <span>0</span>
+              Корзина
             </Link>
           </li>
         </ul>
