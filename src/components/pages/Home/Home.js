@@ -1,17 +1,18 @@
 import React from "react";
 import "./Home.scss";
 import BigPoster from "../../Posters/BigPoster/BigPoster";
-import StandartPoster from "../../Posters/StandartPoster/StandartPoster";
-import { nowcinemaData, sooncinemaData } from "../../../data";
+import NowPoster from "../../Posters/NowPoster/NowPoster";
+import SoonPoster from "../../Posters/SoonPoster/SoonPoster";
+
 import Stock from "../../Stock/Stock";
 
 function Home() {
   return (
     <div className="Home">
       <BigPoster />
-      <StandartPoster heading="Сейчас в кино" data={nowcinemaData} />
+      <NowPoster title="Сейчас в кино" />
       <Stock />
-      <StandartPoster heading="Скоро" data={sooncinemaData} />
+      <SoonPoster title="Скоро" />
     </div>
   );
 }

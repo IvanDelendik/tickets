@@ -1,43 +1,38 @@
 import React from "react";
 import "./BigPoster.scss";
 import Header from "../../Header/Header";
+import { connect } from "react-redux";
+// import soonCinema from "../../../redux/reducers/soonCinema";
 
-import { useDispatch, useSelector } from "react-redux";
-
-const BigPoster = () => {
-  const dispatch = useDispatch();
-
-  const addTickets = () => {
-    dispatch({ type: "ADD_TICKETS", payload: 1 });
-  };
-
-  const delTickets = () => {
-    dispatch({ type: "DEL_TICKETS", payload: 1 });
-  };
-
-  const tickets = useSelector((state) => state.tickets.tickets);
+const BigPoster = (props) => {
+  const min = Math.ceil(0);
+  const max = Math.floor(3);
+  const rendomNumber = Math.floor(Math.random() * (max - min)) + min;
 
   return (
-    <div className="bigposter">
+    <div
+      style={{
+        background:
+          "linear-gradient(to right, rgba(0, 0, 0, 1) 30% , rgba(0, 0, 0, 0.1)), url(" +
+          props.soon[rendomNumber].img_afisha +
+          ") center/cover",
+      }}
+      className="bigposter"
+    >
       <Header />
       <div className="bigposter-items">
-        <p>фантастика, боевик, триллер, 16+</p>
-        <h1>Довод</h1>
-        <p>с 23 апреля</p>
-        <button onClick={() => addTickets()} className="button">
-          Купить билет
-        </button>
-        {tickets > 0 ? (
-          <div>
-            <span> {tickets}</span>
-            <button onClick={() => delTickets()} className="button">
-              удалить билет
-            </button>
-          </div>
-        ) : null}
+        <p>
+          {props.soon[rendomNumber].genre}, {props.soon[rendomNumber].age}
+        </p>
+        <h1>{props.soon[rendomNumber].name}</h1>
+        <p>с {props.soon[rendomNumber].release}</p>
       </div>
     </div>
   );
 };
 
-export default BigPoster;
+function mapStateToProps(state) {
+  return { soon: state.soon };
+}
+
+export default connect(mapStateToProps)(BigPoster);

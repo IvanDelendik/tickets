@@ -1,11 +1,13 @@
-import { createStore, combineReducers } from "redux";
-import { ticketsReducer } from "./reducers/ticketsReducer";
-import { customerReducer } from "./reducers/customerReducer";
+import { createStore, applyMiddleware } from "redux";
+import { rootReducer } from "./reducers/index";
+
 import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
 
-const rootReducer = combineReducers({
-  tickets: ticketsReducer,
-  customer: customerReducer,
-});
+// const initialState = {};
 
-export const store = createStore(rootReducer, composeWithDevTools());
+export const store = createStore(
+  rootReducer,
+  // initialState,
+  composeWithDevTools(applyMiddleware(thunk))
+);

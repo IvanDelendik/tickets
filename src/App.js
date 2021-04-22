@@ -5,7 +5,7 @@ import Catalog from "./components/pages/Catalog/Catalog";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 
-const App = () => {
+const App = (props) => {
   return (
     <Router>
       <Switch>

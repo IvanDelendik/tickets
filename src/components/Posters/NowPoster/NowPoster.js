@@ -1,15 +1,14 @@
 import React from "react";
-import "./Catalog.scss";
+import "./Poster.scss";
 import { connect } from "react-redux";
-import DetailsPoster from "../../Posters/Detalils/DetailsPoster";
-
+import DetailsPoster from "../Detalils/DetailsPoster";
 import { select } from "../../../redux/actions/index";
 
-const Catalog = (props) => {
+const NowPoster = (props) => {
   return (
-    <div className="catalog">
+    <div className="nowPoster">
       <div className="products">
-        <h1 className="products-title">{props.heading}</h1>
+        <h1 className="products-title">{props.title}</h1>
         <div className="products-wrapper">
           {props.now.map((product) => {
             return (
@@ -37,15 +36,9 @@ const Catalog = (props) => {
 };
 
 function mapStateToProps(state) {
-  return { now: state.now, soon: state.soon };
+  return { now: state.now };
 }
 
 const mapDispatchToProps = { select };
 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({ select: select }, dispatch);
-// }
-
-export default connect(mapStateToProps, mapDispatchToProps)(Catalog);
-
-// export default Catalog;
+export default connect(mapStateToProps, mapDispatchToProps)(NowPoster);

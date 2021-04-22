@@ -1,22 +1,20 @@
 import React from "react";
-import "./Catalog.scss";
+import "../NowPoster/Poster.scss";
 import { connect } from "react-redux";
-import DetailsPoster from "../../Posters/Detalils/DetailsPoster";
-
 import { select } from "../../../redux/actions/index";
 
-const Catalog = (props) => {
+const SoonPoster = (props) => {
   return (
     <div className="catalog">
       <div className="products">
-        <h1 className="products-title">{props.heading}</h1>
+        <h1 className="products-title">{props.title}</h1>
         <div className="products-wrapper">
-          {props.now.map((product) => {
+          {props.soon.map((product) => {
             return (
               <div className="products-card" key={product.id}>
                 <div className="products-box">
                   <img
-                    onClick={() => props.select(product)}
+                    // onClick={() => props.select(product)}
                     className="products-card-img"
                     src={product.img_poster}
                     alt={product.alt}
@@ -25,27 +23,20 @@ const Catalog = (props) => {
                   <h2 className="products-box-name">{product.name}</h2>
                   <p className="products-box-ageandgenre">{product.genre}</p>
                 </div>
-                <button className="button">Купить фильм</button>
               </div>
             );
           })}
         </div>
       </div>
-      <DetailsPoster />
+      {/* <DetailsPoster /> */}
     </div>
   );
 };
 
 function mapStateToProps(state) {
-  return { now: state.now, soon: state.soon };
+  return { soon: state.soon };
 }
 
 const mapDispatchToProps = { select };
 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({ select: select }, dispatch);
-// }
-
-export default connect(mapStateToProps, mapDispatchToProps)(Catalog);
-
-// export default Catalog;
+export default connect(mapStateToProps, mapDispatchToProps)(SoonPoster);

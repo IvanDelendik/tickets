@@ -1,6 +1,9 @@
 .header {
     padding: 10px 60px;
 
+    @media screen and (max-device-width: 730px) {
+        display: none}
+
     &-nav {
         ul{
             display: flex;

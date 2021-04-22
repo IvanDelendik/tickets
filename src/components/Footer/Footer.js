@@ -9,22 +9,12 @@ const Footer = () => {
         <ul>
           <li>
             <Link to="/" className="header-nav-link">
-              Афиша
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className="header-nav-link">
               Инфо
             </Link>
           </li>
           <li>
             <Link to="/" className="header-nav-link">
               Профиль
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className="header-nav-link">
-              Корзина
             </Link>
           </li>
         </ul>
