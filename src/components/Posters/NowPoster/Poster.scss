@@ -39,14 +39,14 @@
     align-items: center;
     text-align: center;
 
-    &-ageandgenre {
-    margin: 5px;
-    color: grey;
-    font-size: 18px;
-    }
+      &-ageandgenre {
+      margin: 5px;
+      color: grey;
+      font-size: 18px;
+      }
 
-    &-name {
-      color:rgba(255, 255, 255, 0.85)
-    }
+      &-name {
+        color:rgba(255, 255, 255, 0.85)
+      }
     }
 }

@@ -9,22 +9,22 @@ const Header = (props) => {
       <nav className="header-nav">
         <ul>
           <li>
-            <Link to="/" className="header-nav-link">
+            <Link to="/" className="header-nav-link header-logo">
+              MOooVIE
+            </Link>
+          </li>
+          <li>
+            <Link to="/catalog" className="header-nav-link">
               Каталог
             </Link>
           </li>
           <li>
-            <Link to="/" className="header-nav-link">
-              Инфо
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className="header-nav-link">
+            <Link to="/profile" className="header-nav-link">
               Профиль
             </Link>
           </li>
           <li>
-            <Link to="/" className="header-nav-link header-backet">
+            <Link to="/basket" className="header-nav-link header-backet">
               Корзина
               {props.films > 0 ? (
                 <span className="header-backet-count">{props.films}</span>

@@ -2,12 +2,13 @@ import React from "react";
 import "./Catalog.scss";
 import { connect } from "react-redux";
 import DetailsPoster from "../../Posters/Detalils/DetailsPoster";
-
+import Header from "../../../components/Header/Header";
 import { select } from "../../../redux/actions/index";
 
 const Catalog = (props) => {
   return (
     <div className="catalog">
+      <Header />
       <div className="products">
         <h1 className="products-title">{props.heading}</h1>
         <div className="products-wrapper">
@@ -42,10 +43,4 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = { select };
 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({ select: select }, dispatch);
-// }
-
 export default connect(mapStateToProps, mapDispatchToProps)(Catalog);
-
-// export default Catalog;

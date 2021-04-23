@@ -19,44 +19,36 @@ const DetailsPoster = (props) => {
         >
           <div className="detailsPoster-info">
             <button className="button" onClick={() => props.select(null)}>
-              Назад
+              Скрыть
             </button>
-
             <h1>{props.now.name}</h1>
             <h3>О фильме</h3>
-
             <div>
               <span>Год производства</span>
               <p>{props.now.productionYear}</p>
             </div>
-
             <div>
               <span>Страна</span>
               <p>{props.now.country}</p>
             </div>
-
             <div>
               <span>Жанр</span>
               <p>{props.now.genre}</p>
             </div>
-
             <div>
               <span>Режиссер</span>
               <p>{props.now.producer}</p>
             </div>
-
             <div>
               <span>Бюджет</span>
               <p>{props.now.budget}</p>
             </div>
-
             <div>
               <span>Премьера</span>
               <p>
                 {props.now.release} {props.now.productionYear}
               </p>
             </div>
-
             <div>
               <span>Возраст</span>
               <p>{props.now.age}</p>

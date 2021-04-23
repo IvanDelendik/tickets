@@ -2,7 +2,6 @@ import React from "react";
 import "./BigPoster.scss";
 import Header from "../../Header/Header";
 import { connect } from "react-redux";
-// import soonCinema from "../../../redux/reducers/soonCinema";
 
 const BigPoster = (props) => {
   const min = Math.ceil(0);
