@@ -3,6 +3,7 @@ import "./Home.scss";
 import BigPoster from "../../Posters/BigPoster/BigPoster";
 import NowPoster from "../../Posters/NowPoster/NowPoster";
 import SoonPoster from "../../Posters/SoonPoster/SoonPoster";
+import Backet from "../Backet/Backet";
 
 import Stock from "../../Stock/Stock";
 
@@ -13,6 +14,7 @@ function Home() {
       <NowPoster title="На сайте" />
       <Stock />
       <SoonPoster title="Скоро" />
+      <Backet />
     </div>
   );
 }

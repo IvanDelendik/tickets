@@ -6,6 +6,7 @@ import { select } from "../../../redux/actions/index";
 const DetailsPoster = (props) => {
   return (
     <div className="detailsPoster">
+      {console.log(props.now)}
       {!props.now ? null : (
         <div
           style={{

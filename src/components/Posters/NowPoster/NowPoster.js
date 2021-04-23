@@ -2,7 +2,12 @@ import React from "react";
 import "./Poster.scss";
 import { connect } from "react-redux";
 import DetailsPoster from "../Detalils/DetailsPoster";
-import { select, addBacket } from "../../../redux/actions/index";
+import {
+  select,
+  addBacketCount,
+  enableButtons,
+  disableButtons,
+} from "../../../redux/actions/index";
 
 const NowPoster = (props) => {
   return (
@@ -24,8 +29,12 @@ const NowPoster = (props) => {
                   <h2 className="products-box-name">{product.name}</h2>
                   <p className="products-box-ageandgenre">{product.genre}</p>
                 </div>
-                {console.log(props.films)}
-                <button onClick={() => props.addBacket()} className="button">
+                {console.log(props.active)}
+                <button
+                  onClick={() => props.addBacketCount()}
+                  // onClick={() => props.disableButtons(product)}
+                  className="button"
+                >
                   Купить фильм
                 </button>
               </div>
@@ -39,9 +48,14 @@ const NowPoster = (props) => {
 };
 
 function mapStateToProps(state) {
-  return { now: state.now, films: state.filmsReducer };
+  return { now: state.now, films: state.filmsReducer, active: state.active };
 }
 
-const mapDispatchToProps = { select, addBacket };
+const mapDispatchToProps = {
+  select,
+  addBacketCount,
+  enableButtons,
+  disableButtons,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(NowPoster);
