@@ -10,7 +10,7 @@ function Home() {
   return (
     <div className="Home">
       <BigPoster />
-      <NowPoster title="Сейчас в кино" />
+      <NowPoster title="На сайте" />
       <Stock />
       <SoonPoster title="Скоро" />
     </div>

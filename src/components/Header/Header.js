@@ -1,12 +1,9 @@
 import React from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
-// import { addTickets } from "../../redux/actions/index";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 
-const Header = () => {
-  // const { count } = props;
-
+const Header = (props) => {
   return (
     <header className="header">
       <nav className="header-nav">
@@ -27,10 +24,12 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/" className="header-nav-link">
+            <Link to="/" className="header-nav-link header-backet">
               Корзина
+              {props.films > 0 ? (
+                <span className="header-backet-count">{props.films}</span>
+              ) : null}
             </Link>
-            {/* {count > 0 ? <span> {count}</span> : null} */}
           </li>
         </ul>
       </nav>
@@ -38,13 +37,8 @@ const Header = () => {
   );
 };
 
-// const mapStateToProps = (state) => {
-//   console.log(state.tickets.tickets);
-//   return { count: state.tickets.tickets };
-// };
+const mapStateToProps = (state) => {
+  return { films: state.filmsReducer.films };
+};
 
-// const mapDispatchToProps = { addTickets };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Header);
-
-export default Header;
+export default connect(mapStateToProps, null)(Header);

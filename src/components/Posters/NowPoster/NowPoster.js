@@ -2,7 +2,7 @@ import React from "react";
 import "./Poster.scss";
 import { connect } from "react-redux";
 import DetailsPoster from "../Detalils/DetailsPoster";
-import { select } from "../../../redux/actions/index";
+import { select, addBacket } from "../../../redux/actions/index";
 
 const NowPoster = (props) => {
   return (
@@ -24,7 +24,10 @@ const NowPoster = (props) => {
                   <h2 className="products-box-name">{product.name}</h2>
                   <p className="products-box-ageandgenre">{product.genre}</p>
                 </div>
-                <button className="button">Купить фильм</button>
+                {console.log(props.films)}
+                <button onClick={() => props.addBacket()} className="button">
+                  Купить фильм
+                </button>
               </div>
             );
           })}
@@ -36,9 +39,9 @@ const NowPoster = (props) => {
 };
 
 function mapStateToProps(state) {
-  return { now: state.now };
+  return { now: state.now, films: state.filmsReducer };
 }
 
-const mapDispatchToProps = { select };
+const mapDispatchToProps = { select, addBacket };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NowPoster);
